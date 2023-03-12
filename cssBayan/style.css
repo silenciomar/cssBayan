@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  /* 	  // background: #000 !important;
+  // color: #0f0 !important;
+  // outline: solid #f00 1px !important; */
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  background-color: rgb(255, 255, 240);
+}
+
+input::-ms-clear {
+  font-family: inherit;
+  display: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.meme {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.meme__accordion {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meme__title {
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  margin: 30px;
+}
+
+.meme__trigger {
+  cursor: pointer;
+  width: 200px;
+  height: 30px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid gray;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.meme__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  padding: 10px;
+}
+.meme__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.meme__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all ease-in-out 0.5s;
+}
+
+.meme__input[id*=img]:checked ~ .meme__trigger span {
+  opacity: 1;
+}
+
+.meme__input[id^=img]:checked ~ .meme__content {
+  max-height: 200px;
+}
+
+@media (hover: hover) {
+  .meme__trigger {
+    width: 600px;
+    height: 30px;
+  }
+  .meme__accordion {
+    width: 700px;
+  }
+  .meme__title {
+    font-size: 40px;
+  }
+  .meme__item span {
+    opacity: 0;
+    transition: all ease .5s;
+  }
+  .meme__accordion:hover span {
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+  .meme__input[id^=img-]:hover ~ .meme__content {
+    max-height: 200px;
+  }
+}
