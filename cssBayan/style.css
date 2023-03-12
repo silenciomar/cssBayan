@@ -51,6 +51,7 @@ h1 {
   padding: 0.9em;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .meme__title {
@@ -91,9 +92,11 @@ h1 {
 .meme__item span {
   opacity: 0;
   transition: all ease .5s;
+  color: black;
 }
 
 .meme__content {
+  cursor: pointer;
   max-height: 0;
   overflow: hidden;
   transition: all ease-in-out 0.5s;
@@ -108,7 +111,7 @@ h1 {
   opacity: 1;
 }
 
-.meme__input[id*=img-]:hover~.meme__content {
+.meme__input[id*=img]:hover~.meme__content {
   max-height: 100vh;
   color: black;
 }
